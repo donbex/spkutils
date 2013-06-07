@@ -1,6 +1,5 @@
-CPP=g++
-CC=cc
-CFLAGS = -c
+CXX=g++
+CXXFLAGS = -c
 
 all: SPK/libz.a SPK/lib7.a SPK/libspk.a spktool spkconvert
 
@@ -18,16 +17,16 @@ SPK/lib7.a:
 ### - Binary Compile
 
 spktool: spktool.o SPK/libspk.a SPK/libz.a SPK/lib7.a
-	$(CPP) spktool.o SPK/libspk.a SPK/libz.a SPK/lib7.a -o ../spktool
+	$(CXX) spktool.o SPK/libspk.a SPK/libz.a SPK/lib7.a -o ../spktool
 
 spkconvert: spkconvert.o SPK/libspk.a SPK/libz.a SPK/lib7.a
-	$(CPP) spkconvert.o SPK/libspk.a SPK/libz.a SPK/lib7.a -o ../spkconvert
+	$(CXX) spkconvert.o SPK/libspk.a SPK/libz.a SPK/lib7.a -o ../spkconvert
 
 spktool.o: SPKTool/spktool.cpp
-	$(CPP) $(CFLAGS) SPKTool/spktool.cpp
+	$(CXX) $(CXXFLAGS) SPKTool/spktool.cpp
 
 spkconvert.o: SPKConvert/main.cpp
-	$(CPP) $(CFLAGS) SPKConvert/main.cpp -o spkconvert.o
+	$(CXX) $(CXXFLAGS) SPKConvert/main.cpp -o spkconvert.o
 
 
 clean:
@@ -44,6 +43,6 @@ distclean:
 	rm -rf SPK/ansi7zip/*.o
 
 depend:
-	makedepend -- $(CFLAGS) -- *.[ch]
+	makedepend -- $(CXXFLAGS) -- *.[ch]
 
 # DO NOT DELETE THIS LINE -- make depend depends on it.

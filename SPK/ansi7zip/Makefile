@@ -8,16 +8,16 @@ DEP = $(SRC:.cpp=.d)
 OUT = ../lib7.a
 
 # C++ compiler flags (-g -O2 -Wall)
-CCFLAGS = -g
+CXXFLAGS = -g
 
 # compiler
-CCC = gcc
+CXX = g++
 
 $(OUT): $(OBJ)
 	ar rcs $(OUT) $(OBJ)
 
 $(OBJ): $(SRC)
-	$(CCC) $(CCFLAGS) -MMD -MP -c $< -o $@
+	$(CXX) $(CXXFLAGS) -MMD -MP -c $< -o $@
 
 # use proper target even if a file named 'clean' is present
 .PHONY: clean

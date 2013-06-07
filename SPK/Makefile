@@ -8,16 +8,16 @@ DEP = $(SRC:.cpp=.d)
 OUT = libspk.a
 
 # C++ compiler flags (-g -O2 -Wall)
-CCFLAGS = -g
+CXXFLAGS = -g
 
 # compiler
-CCC = gcc
+CXX = g++
 
 $(OUT): $(OBJ) lib7.a libz.a
 	ar rcs $(OUT) $(OBJ)
 
 $(OBJ): $(SRC)
-	$(CCC) $(CCFLAGS) -MMD -MP -c $< -o $@
+	$(CXX) $(CXXFLAGS) -MMD -MP -c $< -o $@
 
 libz.a:
 	make -C zlib -f Makefile

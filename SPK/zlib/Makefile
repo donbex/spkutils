@@ -11,13 +11,13 @@ OUT = ../libz.a
 CCFLAGS = -g
 
 # compiler
-CCC = gcc
+CC = cc
 
 $(OUT): $(OBJ)
 	ar rcs $(OUT) $(OBJ)
 
 $(OBJ): $(SRC)
-	$(CCC) $(CCFLAGS) -MMD -MP -c $< -o $@
+	$(CC) $(CCFLAGS) -MMD -MP -c $< -o $@
 
 # use proper target even if a file named 'clean' is present
 .PHONY: clean
