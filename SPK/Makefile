@@ -1,4 +1,4 @@
-SRC =  	CatFile.cpp File.cpp File_IO.cpp MultiSpkFile.cpp SpkFile.cpp XFile.cpp XspFile.cpp
+SRC = CatFile.cpp File.cpp File_IO.cpp MultiSpkFile.cpp SpkFile.cpp XFile.cpp XspFile.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
@@ -14,7 +14,7 @@ CCFLAGS = -g
 CCC = gcc
 
 $(OUT): $(OBJ) lib7.a libz.a
-	ar rcs $(OUT) $(OBJ) lib7.a libz.a
+	ar rcs $(OUT) $(OBJ)
 
 $(OBJ): $(SRC)
 	$(CCC) $(CCFLAGS) -MMD -MP -c $< -o $@
