@@ -16,7 +16,7 @@ CXX = g++
 $(OUT): $(OBJ) lib7.a libz.a
 	ar rcs $(OUT) $(OBJ)
 
-$(OBJ): $(SRC)
+$(OBJ): %.o: %.cpp
 	$(CXX) $(CXXFLAGS) -MMD -MP -c $< -o $@
 
 libz.a:

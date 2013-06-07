@@ -16,7 +16,7 @@ CXX = g++
 $(OUT): $(OBJ)
 	ar rcs $(OUT) $(OBJ)
 
-$(OBJ): $(SRC)
+$(OBJ): %.o: %.cpp
 	$(CXX) $(CXXFLAGS) -MMD -MP -c $< -o $@
 
 # use proper target even if a file named 'clean' is present
