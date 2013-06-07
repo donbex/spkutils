@@ -1,5 +1,5 @@
 *.d
 *.o
 *.a
-SPKTool/spktool
-SPKConvert/spkconvert
+**/spktool
+**/spkconvert

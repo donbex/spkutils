@@ -37,5 +37,8 @@ clean:
 	rm -f $(OBJ) $(DEP) $(BIN)
 	make -C SPK -f Makefile	clean
 
+install:
+	cp $(BIN) ./
+
 # update dependencies if necessary, before doing anything else
 -include $(DEP)
