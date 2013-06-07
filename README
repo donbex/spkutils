@@ -1,0 +1,22 @@
+SPK Command Line Utils by Cycrow
+
+Includes:
+* SPK Library for SPK file handling (includes 7zip and zlib compression)
+* SPKTool - Command line tool for manipulating new format SPK files
+* SPKConvert - Command line tool for converting old format SPK files into new format for use with SPKTool
+
+COMPILING:
+
+To compile, you can just run the compile script, ./compile.sh
+
+USAGE:
+
+Once compiled, it will create 2 files, spktool and spkconvert
+If the SPK file you are trying to use is in the old format, then u must first convert it
+
+Convertion, ./spkconvert <oldfile.spk> <newfile.spk>
+
+running ./spktool will display the list of options available.
+using it with just the switch, ie ./spktool -v.  It will display the syntax and usage for the command.
+
+SPKTool can be used to view contents of files, extract the archive, create a new one, add and remove files from the arhive.
