@@ -2,6 +2,8 @@
 #define __FILE_IO_H__
 
 #include "String.h"
+// needed for 'truncate' function
+#include <unistd.h>
 
 class CFileIO
 {
