@@ -7,6 +7,9 @@
 
 #define NullString String("")
 #include <string>
+#include <cstring>
+#include <cstdlib>
+#include <cstdio>
 
 #ifdef QT_DLL
 #include <qstring.h>
