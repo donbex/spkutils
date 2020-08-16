@@ -705,7 +705,7 @@ unsigned char *CompressPCKData ( unsigned char *buffer, size_t size, size_t *ret
 	unsigned long ubound;
 	ret=deflateInit2(&zs, 9, Z_DEFLATED, -15, 9, Z_DEFAULT_STRATEGY);
 	if(ret!=Z_OK) 
-		return false;
+		return NULL;
 
 	ubound=deflateBound(&zs, size);
 	if ( newsize < ubound) 
